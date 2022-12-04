@@ -1,16 +1,18 @@
 body {
-    background-color: #f0f0f0;
+    background-color: #dbd57e;
     color: #333;
     line-height: 1.4;
-    max-width: 40em;
+    max-width: 640px;
     margin: auto;
     font-family: sans-serif;
     text-align: justify;
     padding: 0;
 }
 
-h1 {
-    text-align: center;
+#logo {
+    margin: auto;
+    display: block;
+    padding: 20px;
 }
 
 h2 {
@@ -18,7 +20,7 @@ h2 {
     padding-bottom: 0;
 }
 
-img {
+.row-pics img {
     display: inline-block;
     padding: 5px;
     border-radius: 10px;

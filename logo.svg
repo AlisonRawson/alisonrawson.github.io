@@ -2,13 +2,13 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="297mm"
-   height="210mm"
-   viewBox="0 0 297 210"
+   width="285.21899mm"
+   height="116.28548mm"
+   viewBox="0 0 285.21899 116.28548"
    version="1.1"
    id="svg5"
    inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
-   sodipodi:docname="logo.svg"
+   sodipodi:docname="logo-tight.svg"
    inkscape:export-filename="/home/michael/Desktop/logo.png"
    inkscape:export-xdpi="96"
    inkscape:export-ydpi="96"
@@ -27,51 +27,56 @@
      inkscape:document-units="mm"
      showgrid="false"
      inkscape:zoom="0.54122434"
-     inkscape:cx="695.64499"
-     inkscape:cy="394.47597"
+     inkscape:cx="719.6646"
+     inkscape:cy="217.10036"
      inkscape:window-width="1316"
      inkscape:window-height="704"
      inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1" />
+     inkscape:current-layer="layer1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
   <defs
      id="defs2">
     <rect
        x="-183.28279"
        y="17.406614"
-       width="486.44027"
+       width="486.44028"
        height="116.23423"
        id="rect21210" />
     <rect
        x="-247.8777"
-       y="265.23729"
-       width="604.01968"
+       y="265.2373"
+       width="604.01965"
        height="116.67368"
        id="rect2361" />
     <rect
-       x="154.24447"
+       x="154.24448"
        y="332.81592"
        width="139.68748"
-       height="77.11284"
+       height="77.112839"
        id="rect2753" />
     <rect
        x="54.231426"
-       y="187.88578"
+       y="187.88577"
        width="227.52574"
        height="127.54612"
        id="rect59893" />
     <rect
-       x="150.40943"
-       y="249.43223"
-       width="714.93458"
+       x="150.40942"
+       y="249.43224"
+       width="714.93457"
        height="217.13367"
        id="rect8217" />
   </defs>
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     transform="translate(-5.8904959,-46.857259)">
     <g
        id="g39638">
       <g
