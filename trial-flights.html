@@ -19,14 +19,132 @@
 <main>
 <a href="index.html"><img id="logo" height="100" src="logo.svg" alt="Tiger Moth Flying"></a>
 <h1>Trial Flights</h1>
+<p>
 We offer vouchers for trial flights in the Tiger Moth, an exciting present for friends, family or yourself.
-Payment via PayPal is under construction.
-In the meantime, please contact us to purchase trial flight vouchers directly.
+You can purchase vouchers via PayPal below: use the drop-down menu to select either a 30-minute or 60-minute flight duration.
+After purchase, you will receive a receipt from us and instructions for using your voucher.
+
+<p>
+A flight plan will be agreed before takeoff: Breighton is ideally placed for a number of different options.
+A 30-minute flight might incoporate a flight over York.
+Castle Howard, stunning from the air, takes 60 minutes.
+Other options include the Humber Bridge, Flamborough Head, or even your own home!
+
+<p>
+<strong>
+Vouchers are valid for 12 months from the date of purchase.
+Please ensure that you supply a valid e-mail to PayPal, as we have no other way of contacting you.
+If there is a problem, please contact us as soon as possible and we will be happy to help.
+</strong>
+
+<!-- PayPal BS follows -->
+<div id="smart-button-container">
+ <div style="text-align: center;">
+  <div style="margin-bottom: 1.25rem;">
+   <p>Trial Flight Vouchers</p>
+   <select id="item-options">
+    <option value="30-minute Trial Flight Voucher" price="259.00">30-minute Trial Flight Voucher &mdash; £259.00</option>
+    <option value="60-minute Trial Flight Voucher" price="489.00">60-minute Trial Flight Voucher &mdash; £489.00</option>
+   </select>
+   <select style="visibility: hidden" id="quantitySelect"></select>
+  </div>
+  <div id="paypal-button-container"></div>
+ </div>
+</div>
+<script src="https://www.paypal.com/sdk/js?client-id=AfOGOnoD4o25P5_cZTKr8gHLnzqzQJpFA_5SDbow6wd0S256pnbsQwdxzoIrYin6kOEVi5mCMYbR4oLt&enable-funding=venmo&currency=GBP" data-sdk-integration-source="button-factory"></script>
+<script>
+function initPayPalButton() {
+  var shipping = 0;
+  var itemOptions = document.querySelector("#smart-button-container #item-options");
+  var quantity = parseInt();
+  var quantitySelect = document.querySelector("#smart-button-container #quantitySelect");
+  var orderDescription = 'Trial Flights';
+  if(orderDescription === '') {
+    orderDescription = 'Item';
+  }
+  paypal.Buttons({
+    style: {
+      shape: 'rect',
+      color: 'gold',
+      layout: 'horizontal',
+      label: 'paypal',
+    },
+    createOrder: function(data, actions) {
+      var selectedItemDescription = itemOptions.options[itemOptions.selectedIndex].value;
+      var selectedItemPrice = parseFloat(itemOptions.options[itemOptions.selectedIndex].getAttribute("price"));
+      var tax = (0 === 0 || false) ? 0 : (selectedItemPrice * (parseFloat(0)/100));
+      if(quantitySelect.options.length > 0) {
+        quantity = parseInt(quantitySelect.options[quantitySelect.selectedIndex].value);
+      } else {
+        quantity = 1;
+      }
+
+      tax *= quantity;
+      tax = Math.round(tax * 100) / 100;
+      var priceTotal = quantity * selectedItemPrice + parseFloat(shipping) + tax;
+      priceTotal = Math.round(priceTotal * 100) / 100;
+      var itemTotalValue = Math.round((selectedItemPrice * quantity) * 100) / 100;
+
+      return actions.order.create({
+        purchase_units: [{
+          description: orderDescription,
+          amount: {
+            currency_code: 'GBP',
+            value: priceTotal,
+            breakdown: {
+              item_total: {
+                currency_code: 'GBP',
+                value: itemTotalValue,
+              },
+              shipping: {
+                currency_code: 'GBP',
+                value: shipping,
+              },
+              tax_total: {
+                currency_code: 'GBP',
+                value: tax,
+              }
+            }
+          },
+          items: [{
+            name: selectedItemDescription,
+            unit_amount: {
+              currency_code: 'GBP',
+              value: selectedItemPrice,
+            },
+            quantity: quantity
+          }]
+        }]
+      });
+    },
+    onApprove: function(data, actions) {
+      return actions.order.capture().then(function(orderData) {
+
+        // Full available details
+        console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+
+        // Show a success message within this page, e.g.
+        const element = document.getElementById('paypal-button-container');
+        element.innerHTML = '';
+        element.innerHTML = '<h3>Thank you for your payment!</h3>';
+
+        // Or go to another URL:  actions.redirect('thank_you.html');
+
+      });
+    },
+    onError: function(err) {
+      console.log(err);
+    },
+  }).render('#paypal-button-container');
+}
+initPayPalButton();
+</script>
+<!-- end PayPal -->
 
 <h2>Redemption</h2>
 <p>
 Contact <a href="mailto:alison@tigermothacademy.co.uk">alison@tigermothacademy.co.uk</a> to redeem a voucher.
-We will contact you by e-mail to discuss when you would prefer to fly, and where you are travelling from.
+We will discuss when you would prefer to fly, and where you are travelling from.
 This helps us to plan the best possible time for your flight.
 We must also ask you about your height and weight: this helps us provide a suitable flying suit and balance the aircraft.
 
@@ -43,12 +161,6 @@ You will be fitted with a headset to enable inflight communication with your pil
 
 <h2>Airfield Location</h2>
 <iframe id="embedded-map" loading="lazy" allowfullscreen src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJE8LeIl8heUgR_dF407CC5Bc&key=AIzaSyAhY6wajouh9yUnGabIm4n6RgqYW7dWB_0"></iframe>
-
-<h2>Flight Plan</h2>
-A flight plan will be agreed before takeoff: Breighton is ideally placed for a number of different options.
-A half-hour flight might incoporate a flight over York.
-Castle Howard, stunning from the air, takes an hour.
-Other options include the Humber Bridge, Flamborough Head, or even your own home!
 
 <h2>At the Airfield</h2>
 There is ample parking and a viewing area for your friends and family.
