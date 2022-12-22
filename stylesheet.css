@@ -4,7 +4,7 @@ body {
     max-width: 640px;
     margin: auto;
     color: #222;
-    background-color: snow;
+    background-color: crimson;
     line-height: 1.4;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -12,7 +12,7 @@ body {
 main {
     display: inline-block;
     padding: 10px;
-    background-color: beige;
+    background-color: lightgrey;
     text-align: justify;
 }
 
